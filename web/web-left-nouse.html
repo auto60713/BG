@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title></title>
+  <script>
+  
+  function getUserlist() {
+	var myobject = {
+		ValueA : 'H26010001',
+		ValueB : 'H26010002',
+		ValueB : 'H260100003'
+	};
+	var select = document.getElementById("example-select");
+	for(index in myobject) {
+		select.options[select.options.length] = new Option(myobject[index], index);
+	}
+  }
+  
+  function sidChg(sidName){
+	document.myPic.src="img/" +picName
+  }
+  </script>
+  </head>
+  <body onload="">
+  <img width="100" height="100" src="images/left_1.jpg">  
+  <br><br>  
+  選擇人物
+  <select name="SIdSelect" size="25" ONCHANGE="top.frames['web-main'].location.href = this.options[this.selectedIndex].value;">
+   <option value="web-main.html">班級</option>
+   <option value="2p1.html">H26020002</option>
+   <option value="3p2.html">H26020003</option>
+   <option value="4.html">H26020004</option>
+   <option value="5.html">H26020005</option>
+   <option value="6.html">H26020006</option>
+   <option value="7.html">H26020007</option>
+  </select>
+ </body>
+</html>

@@ -1,0 +1,84 @@
+#menu {  
+  width: 1050px; 
+  height: 35px; 
+  clear: both; 
+  
+}
+
+ul.navi { 
+  float: left; 
+  width: 1050px;
+  margin: 0; 
+  padding: 0; 
+  list-style: none;
+  background:  #0; 
+  -moz-border-radius-topright: 10px; 
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;  
+}
+
+ul.navi li {
+  display: inline;
+}
+
+ul.navi li a { 
+  float: left; 
+  font: bold 14px Arial;  
+  line-height: 40px; 
+  color: #8B4513; 
+  text-decoration: none; 
+  text-shadow: 1px 1px 1px #F5DEB3; 
+  margin: 0; 
+  padding: 0 30px; 
+  background: 	#FFFFE0; 
+  -moz-border-radius-topright: 10px; 
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;     
+}
+
+ul.navi .current a, ul.navi li:hover > a  { 
+  color: #fff; 
+  text-decoration: none; 
+  text-shadow: 1px 1px 1px #330000;  
+  background:  #663300;  
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px; 
+}
+
+ul.navi  ul {  
+  display: none; 
+}
+
+ul.navi li:hover > ul {
+  position: absolute; 
+  display: block;  
+  width:800px; 
+  height: 45px;
+  margin: 40px 0 0 0; 
+  background: #FFFFE0;  
+  -moz-border-radius-bottomright: 10px; 
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px; 
+}
+
+ul.navi li:hover > ul li a { 
+  float: left; 
+  font: bold 14px Arial; 
+  line-height: 40px; 
+  color: #cc9900; 
+  text-decoration: none; 
+  text-shadow: 1px 1px 1px #DCDCDC; 
+  margin: 0; 
+  padding: 0 10px 5 0; 
+  background: #
+
+ul.navi li:hover > ul li a:hover {
+  color: #; 
+  text-decoration: none; 
+  text-shadow: none; 
+}

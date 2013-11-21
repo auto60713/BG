@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title></title>
+  <script>
+  
+  function getUserlist() {
+	var myobject = {
+		ValueA : 'H26010001',
+		ValueB : 'H26010002',
+		ValueB : 'H260100003'
+	};
+	var select = document.getElementById("example-select");
+	for(index in myobject) {
+		select.options[select.options.length] = new Option(myobject[index], index);
+	}
+  }
+
+  </script>
+  </head>
+  <body onload="">
+  <img width="100" height="100" src="images/left_1.jpg">  
+
+  <br><br>  
+  <select id="userList onchange="if(this.options[this.selectedIndex].value != ''){window.top.location.href=this.options[this.selectedIndex].value}">
+   <option value="CJCU"><a href="http://www.cjcu.edu.tw" target="web-main">CJCU</option>
+   <option value="2p1.html">H26020002</option>
+   <option value="4.html">H26020004</option>
+  </select>
+
+ </body>
+</html>

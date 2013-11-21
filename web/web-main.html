@@ -1,0 +1,43 @@
+<html>
+<head>
+     <meta charset="UTF-8">
+	 <style type="text/css" title=""> 
+       body{width:360px;margin:0 auto;padding:20px;background:#000;color:#000;} 
+       #main-content{border:5px solid #7bc809;padding:5px;background:#fff ;} 
+          ul{ margin:0;padding:0;list-style:none;padding-bottom:300px; /*padding??片??空?*/} 
+          li{display:inline;} 
+          li a{position:relative;} 
+          li a:hover{position:relative;border:none;z-index:1000;}/*此?要有border:none?性，否?IE6下面?法?示出?，是IE6??的BUG*/ 
+          li a img{width:100px;height:100px;border:none;position:absolute;}/*使用??定位??片固定?而?离?面流*/ 
+          li a:hover img{position:absolute;left:-50px;top:-80px;width:500px;height:500px;padding:5px;background:#fff;border:2px solid #000;z-index:1000;} /*注意?里的z-index?示?置，否??有重?*/ 
+         li#pic-01 a img{top:0;left:0;} 
+         li#pic-02 a img{top:0;left:100px;} 
+         li#pic-03 a img{top:0;left:200px;} 
+         li#pic-04 a img{top:100px;left:0;} 
+         li#pic-05 a img{top:100px;left:100px;} 
+         li#pic-06 a img{top:100px;left:200px;} 
+         li#pic-07 a img{top:200px;left:0px;} 
+         li#pic-08 a img{top:200px;left:100px;} 
+         li#pic-09 a img{top:200px;left:200px;}
+     </style> 
+</head>
+ <body>
+ <h1>Web Main Page</h1>
+ 
+ 放大鏡
+ 
+ <br>
+  <ul> 
+      <li id="pic-01"><a href="#"><img src="image/pic1.jpg" alt="?1" /></a></li> 
+      <li id="pic-02"><a href="#"><img src="image/pic2.jpg" alt="?2" /></a></li> 
+      <li id="pic-03"><a href="#"><img src="image/pic3.jpg" alt="?3" /></a></li> 
+	  <li id="pic-04"><a href="#"><img src="image/pic4.jpg" alt="?4" /></a></li> 
+	  <li id="pic-05"><a href="#"><img src="image/pic5.jpg" alt="?5" /></a></li> 
+	  <li id="pic-06"><a href="#"><img src="image/pic6.jpg" alt="?6" /></a></li> 
+      <li id="pic-07"><a href="#"><img src="image/pic7.jpg" alt="?7" /></a></li> 
+      <li id="pic-08"><a href="#"><img src="image/pic8.jpg" alt="?8" /></a></li> 
+      <li id="pic-09"><a href="#"><img src="image/pic9.jpg" alt="?9" /></a></li> 
+  </ul> 
+
+</body>
+</html> 

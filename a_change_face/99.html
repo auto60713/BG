@@ -1,0 +1,168 @@
+<? session_start(); ?>
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8">
+    
+		<title>畢輯網-排版</title>
+		
+		<script type="text/javascript" src="1.js"></script>
+		<script type="text/javascript" src="2.js"></script>
+		<script type="text/javascript" src="3.js"></script>
+        <link rel="stylesheet" type="text/css" href="menu.css" />
+		<link rel="stylesheet" type="text/css" href="4.css" />
+        <style>
+	html { 
+		overflow: hidden; 
+	} 
+
+	body { 
+	background:url("../images/4567.jpg");
+	background-size:1024px 768px;
+	background-repeat:no-repeat;
+     padding-left:8.5%;
+	} 
+
+
+.photo_wall {
+  height:150px;
+  overflow-x: auto;
+ }	
+
+h5 {
+	position:absolute;
+right:103px;
+color:black;
+	}
+	
+	.layers{
+		margin-top:80px;
+		margin-right:800px;
+		}
+		
+		.tb9{
+			margin-top:80px;
+			margin-left:140px;
+			}
+			.name1 {
+	position:absolute;
+right:120px;
+font-size:20px;
+	}
+        </style>
+        
+        
+   <script>
+		function saveTypesetting() {
+	m = document.getElementById("collage"); 
+    document.getElementById("canvasImg").src = m.toDataURL("image/png");
+}
+    </script>     
+	</head>
+    
+    
+	<body>
+    
+	<ul class="navi">
+  <li><a href="#" onclick="confirmDrawing()">儲存</a></li>      
+   <li><a href="../editing.html"> 回上一頁 </a></li>            	   
+</ul>
+       
+       <?
+ include("inner3.php");
+ if (isset($_GET['loginname']))
+    { $loginname=$_GET['loginname'];    }	
+ else
+  {  
+    ?>
+       
+   <?
+  }
+  $str2="select * from student where loginname = '$loginname';";   
+  $result2=mysqli_query($link,$str2); 
+  $list=mysqli_fetch_array($result2);     
+  ?>
+  
+ 
+<p class="name1">您好!  <? echo $loginname; ?> </p>
+
+        <br>
+        
+		<table border="2" class="tb9">
+		<td>
+		<canvas id="collage" width="600" height="500"></canvas>
+		</td>
+			<td >
+			<div style=" overflow:auto; width: 150px; height: 500px; " border="1" cellpadding="4" cellspacing="0" align="center" valign="middle">
+				<ol><a href="#_self" onclick="ShowImage('../A001/H24831276/1.jpg',1)"><img id="img1" alt="" src="../A001/H24831276/1.jpg" width="120" height="120"></a></ol>
+				<ol><a href="#_self" onclick="ShowImage('../A001/H24831276/2.jpg',2)"><img id="img2" alt="" src="../A001/H24831276/2.jpg" width="120" height="120"></a></ol>		
+				<ol><a href="#_self" onclick="ShowImage('../A001/H24831276/3.jpg',3)"><img id="img3" alt="" src="../A001/H24831276/3.jpg" width="120" height="120"></a></ol>			
+				<ol><a href="#_self" onclick="ShowImage('../A001/H24831276/4.jpg',4)"><img id="img4" alt="" src="../A001/H24831276/4.jpg" width="120" height="120"></a></ol>		
+			</td>
+	</table>
+		
+        
+        
+		<aside class="layers" >
+			<h2>功能區</h2>
+			<ul>
+				<li class="background">
+					<img src="background.png"/>
+					<h3>Background</h3>
+					<div class="visible"></div>
+				</li>
+				<li class="background">
+					<img src="b5.jpg"/>
+					<h3>Background</h3>
+					<div class="visible"></div>
+				</li>
+				<li class="background">
+					<img src="b15.gif"/>
+					<h3>Background1</h3>
+					<div class="visible"></div>
+				</li>
+			</ul>
+			<div class="options">
+				<span>特效:</span>
+				<select name="blending">
+					<option value="source-over">Normal</option>
+					<option value="xor">XOR</option>
+					<option value="lighter">Lighter</option>
+				</select>
+				<span>透明度:</span>
+				<select name="opacity">
+					<option value="1" selected="selected">100%</option>
+					<option value="0.9">90%</option>
+					<option value="0.8">80%</option>
+					<option value="0.7">70%</option>
+					<option value="0.6">60%</option>
+					<option value="0.5">50%</option>
+					<option value="0.4">40%</option>
+					<option value="0.3">30%</option>
+					<option value="0.2">20%</option>
+					<option value="0.1">10%</option>
+				</select>
+				<span>陰影開關:</span>
+				<select name="shadow">
+					<option value="true">開</option>
+					<option value="false">關</option>
+				</select>
+			</div>
+			<div class="buttons">
+				<ul>
+				<li class="home" ></li>
+                
+					<li class="save" ></li>
+
+					<li class="remove" ></li>
+					<li class="up"></li>
+					<li class="down"></li>
+				</ul>
+			</div>
+		</aside>
+        
+  
+		
+	</body>
+</html>
+
