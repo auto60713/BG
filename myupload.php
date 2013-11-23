@@ -19,11 +19,11 @@
   
 //自行登入
 $host="localhost"; // Host name 
-$username="root"; // Mysql username 
+$bgusername="root"; // Mysql username 
 $password="123456"; // Mysql password 
 $db_name="activity"; // Database name 
 
-mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
+mysql_connect("$host", "$bgusername", "$password")or die("cannot connect"); 
 mysql_select_db("$db_name")or die("cannot select DB");
 
 mysql_query("SET NAMES 'utf8'");
