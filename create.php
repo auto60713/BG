@@ -29,16 +29,17 @@ font-family:標楷體;
 
 
 
-<br><br>
-<form action="myupload.php" method="post" enctype="multipart/form-data">
-請上傳個人照片
+<br><br><br><br>
+<form action="create_finish.php" method="post" enctype="multipart/form-data">
+　　　請上傳個人照片
 <br>
- <hr>**** jpg圖片大小：600x500  ****<br><br>
- <input type="file" name="imageURL[]" id="imageURL" multiple />
+<hr>
+　　**** 限定JPG　可多張上傳 ****<br><br>
+　　<input type="file" name="imageURL[]" id="imageURL" multiple />
 <br>
- <hr>
+<hr>
 
-<input type="submit" value="submit" name="submit" />
+　　<input type="submit" value="上傳" name="submit" />
 </form>
 </body>
 </html>

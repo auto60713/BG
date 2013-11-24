@@ -260,8 +260,8 @@ var url='login.php?'
 	<li><a href="#">音樂</a>
 	    <ul>
       <li><a href="#" onClick="playsound(1)">當</a></li>
-			<li><a href="#" onClick="playsound(2)">分享</a></li>  
-			<li><a href="#" onClick="playsound(3)">永遠的畫面</a></li>
+	  <li><a href="#" onClick="playsound(2)">分享</a></li>  
+	  <li><a href="#" onClick="playsound(3)">永遠的畫面</a></li>
       <li><a href="#" onClick="playsound(4)">聽你說</a></li>
       <li><a href="#" onClick="playsound(5)">一起開始的旅程</a></li>
       <li><a href="#" onClick="playsound(6)">繼續奔跑</a></li>      

@@ -28,7 +28,7 @@ font-family:標楷體;
 <body>
 <div id="menu">
 <ul class="navi">
-   <li><a href="edit5.php"> 塗鴉 </a></li>
+   <li><a href="edit1.php"> 塗鴉 </a></li>
    <li><a href="edit2.php"> 美編 </a></li>
    <li><a href="a_change_face/99.php"> 排版 </a></li>  
      

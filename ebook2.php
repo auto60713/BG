@@ -152,12 +152,12 @@ font-family:標楷體;
 					<?
 					//取得傳遞過來的資料
                      $host="localhost"; // Host name 
-                     $username="root"; // Mysql username 
+                     $bgusername="root"; // Mysql username 
                      $password="123456"; // Mysql password 
                      $db_name="activity"; // Database name 
                      $tbl_name1="photo"; // Table name 
 
-                     mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
+                     mysql_connect("$host", "$bgusername", "$password")or die("cannot connect"); 
                      mysql_select_db("$db_name")or die("cannot select DB");
                      mysql_query("SET NAMES 'utf8'");
 
@@ -169,7 +169,7 @@ font-family:標楷體;
                        //echo "id=".$row['photoID'];
                     	echo '<div class="bb-item">';
 				
-						echo '<img width="600px" height="500px" src="$row[location]">';
+						echo '<img width="600px" height="500px" src="'.$row[location].'">';
 						
 				      //echo $row["location"];
 						
