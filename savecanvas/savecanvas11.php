@@ -29,7 +29,7 @@ if (isset($GLOBALS["HTTP_RAW_POST_DATA"]))
 
 	$unencodedData=base64_decode($filteredData);     
 
-	$fp = fopen( $_GET['pic'], 'wb' );    
+	$fp = fopen( "../".$_GET['pic'], 'wb' );    
 	fwrite( $fp, $unencodedData);    
 	fclose( $fp );
 }

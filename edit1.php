@@ -40,6 +40,8 @@ function init() {
     c.drawImage(img,0,0, 700, 540);
 }
 
+
+
 function confirmDrawing() {
 	m = document.getElementById("canvas"); 
 	var imgName = 'img' + iNo;
@@ -47,36 +49,16 @@ function confirmDrawing() {
 	document.getElementById(imgName).src = canvasData;
 	
 var ajax = new XMLHttpRequest();
-switch(iNo){
-case 1:
-ajax.open("POST",'savecanvas/savecanvas11.php?pic='+pic,false);
-break;
-case 2:
-ajax.open("POST",'savecanvas/savecanvas12.php',false);
-break;
-case 3:
-ajax.open("POST",'savecanvas/savecanvas13.php',false);
-break;
-case 4:
-ajax.open("POST",'savecanvas/savecanvas14.php',false);
-break;
-case 5:
-ajax.open("POST",'savecanvas/savecanvas15.php',false);
-break;
-case 6:
-ajax.open("POST",'savecanvas/savecanvas16.php',false);
-break;
-case 7:
-ajax.open("POST",'savecanvas/savecanvas17.php',false);
-break;
-case 8:
-ajax.open("POST",'savecanvas/savecanvas18.php',false);
-break;
 
-}
+ajax.open("POST",'savecanvas/savecanvas11.php?pic='+pic,false);
+
 ajax.setRequestHeader('Content-Type', 'application/upload');
 ajax.send(canvasData );
+location.reload();
 }
+
+
+
 
 function ShowImage(imageFile, imgNo)
 {
@@ -240,15 +222,17 @@ font-family:標楷體;
 
                   $query = "SELECT location FROM photo WHERE userID='".$loginname."'";
                   $result=mysql_query($query);
-
+                  $imgNo = 1;
                    while ($row=mysql_fetch_array($result)) {
                       //echo $row['location'];
    	                 
 					 
 					      //<a href="#_self" onclick="ShowImage('A001/H24831276/529125aa393e7.jpg',1)"><img id="img1" alt="" src="A001/H24831276/529125aa393e7.jpg" width="120" height="120"></a></ol>
 				      $img = "'".$row['location']."'";
-                      echo '<a href="#_self" onclick="ShowImage('.$img.',1)"><img id="img1" src="'.$row['location'].'" width="140" height="140"/></a></br></br>';
-    }
+                      echo '<a href="#_self" onclick="ShowImage('.$img.','.$imgNo.')"><img id="img'.$imgNo.'" src="'.$row['location'].'" width="140" height="140"/></a></br></br>';
+					  
+					  $imgNo += 1;
+                   }
                 ?>
              </div> 
 		</td>
