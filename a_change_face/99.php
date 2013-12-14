@@ -40,7 +40,7 @@ color:#1E1E78;
 font-family:標楷體;
 	}
 	
-        </style>
+</style>
    <script>
 		function saveTypesetting() {
 	m = document.getElementById("collage"); 
@@ -53,11 +53,23 @@ font-family:標楷體;
 
 
   
-  <?php
+<?php
 $classID="A001";
 
 $stuId=$loginname;
 
+
+//取得傳遞過來的資料
+$host="localhost"; // Host name 
+$bgusername="root"; // Mysql username 
+$password="123456"; // Mysql password 
+$db_name="activity"; // Database name 
+$tbl_name1="photo"; // Table name 
+
+mysql_connect("$host", "$bgusername", "$password")or die("cannot connect"); 
+mysql_select_db("$db_name")or die("cannot select DB");
+
+mysql_query("SET NAMES 'utf8'");
 
 ?>
 	   
@@ -102,9 +114,7 @@ $stuId=$loginname;
 			<div class="buttons">
 				<ul>
 				<li class="myhome" ></li>
-               
-					<li class="save" ></li>
-
+					<li class="save" onclick="saveTypesetting()"></li>
 					<li class="remove" ></li>
 					<li class="up"></li>
 					<li class="down"></li>
@@ -121,14 +131,18 @@ $stuId=$loginname;
 		<tr>
 		<td ><table >
         <td><table width="100px" border="1" align="center"> 
-        <td colspan="2"><div align="center"><img src="../<?  echo  $classID."/".$stuId."/".("pic1.jpg");  ?>" width="100" height="100"/></a></div></td>     
-        <td colspan="2"><div align="center"><img src="../<?  echo  $classID."/".$stuId."/".("pic2.jpg");  ?>" width="100" height="100" /></a></div></td>        
-        <td colspan="2"><div align="center"><img src="../<?  echo  $classID."/".$stuId."/".("pic3.jpg");  ?>" width="100" height="100" /></a></div></td>       
-        <td colspan="2"><div align="center"><img src="../<?  echo  $classID."/".$stuId."/".("pic4.jpg");  ?>" width="100" height="100" /> </a></div></td>     
-        <td colspan="2"><div align="center"><img src="../<?  echo  $classID."/".$stuId."/".("pic5.jpg");  ?>" width="100" height="100" /> </a></div></td>
-        <td colspan="2"><div align="center"><img src="../<?  echo  $classID."/".$stuId."/".("pic6.jpg");  ?>" width="100" height="100" /> </a></div></td>
-		<td colspan="2"><div align="center"><img src="../<?  echo  $classID."/".$stuId."/".("pic7.jpg");  ?>" width="100" height="100" /> </a></div></td>
-        <td colspan="2"><div align="center"><img src="../<?  echo  $classID."/".$stuId."/".("pic8.jpg");  ?>" width="100" height="100" /> </a></div></td>
+        	<?
+
+                  $query = "SELECT location FROM photo WHERE userID='".$loginname."'";
+                  $result=mysql_query($query);
+                  $imgNo = 1;
+                   while ($row=mysql_fetch_array($result)) {
+                     
+                      echo '<td colspan="2"><div align="center"><img src="../'.$row["location"].'" width="100" height="100"/> </a></div></td>';
+					  
+					  $imgNo += 1;
+                   }
+            ?>
         </table>
         </ul>
 		</footer>

@@ -58,7 +58,7 @@ margin-left:320px;
   <br>
     <td><input type="submit" name="Submit" value="送出">
     <input type="reset" name="claer" value="清除">
-    <button type="button" onClick="location.href='adduser.html'" >加入會員</button></td>
+    </td>
  
  </table>
  </form>

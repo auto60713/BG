@@ -37,21 +37,13 @@
 		display:none;
 	}
 	
-</style> 
- 
 
-
-<style> .dragger{
+.dragger{
 
 position:relative;
 
 }
-.center
-{
-margin:auto;
-width:50%;
-height:50%;
-}
+
 h3 {
 	position:absolute;
 right:200px;
@@ -66,6 +58,14 @@ font-family:標楷體;
 }
 
 
+#webframe{
+
+	position: absolute;
+left: 20%;
+border-style:double;
+border-width:9px; 
+
+}
 </style>
 
 
@@ -147,40 +147,8 @@ function showpage(pagename)
   document.getElementById('webframe').src = pagename;
 }
 
-function webplay()
-{
-  var sleepTime;
-  
-  sleepTime = 4000;
-  document.getElementById('webframe').src = "../A001/H24831276/test5.jpg";
-  setTimeout("showpage('../A001/H24831276/pic1.jpg')", sleepTime*1 );
-  setTimeout("showpage('../A001/H24831276/pic2.jpg')", sleepTime*2);
-  setTimeout("showpage('../A001/H24831276/pic3.jpg')", sleepTime*3);
-  setTimeout("showpage('../A001/H24831276/pic4.jpg')", sleepTime*4);
-  setTimeout("showpage('../A001/H24831276/pic5.jpg')", sleepTime*5);
-  setTimeout("showpage('../A001/H24831276/pic6.jpg')", sleepTime*6);
-  setTimeout("showpage('../A001/H24831276/pic7.jpg')", sleepTime*7);
-  setTimeout("showpage('../A001/H24831276/pic8.jpg')", sleepTime*8);
-  setTimeout("showpage('../web/9.html')", sleepTime*9);
-  setTimeout("showpage('../web/10.html')", sleepTime*10);
-  setTimeout("showpage('../web/11.html')", sleepTime*11);
-  setTimeout("showpage('../web/12.html')", sleepTime*12);
-  setTimeout("showpage('../web/13.html')", sleepTime*13);
-  setTimeout("showpage('../web/14.html')", sleepTime*14);
-  setTimeout("showpage('../web/15.html')", sleepTime*15);
-  setTimeout("showpage('../web/16.html')", sleepTime*16);
-  setTimeout("showpage('../web/17.html')", sleepTime*17);
-  setTimeout("showpage('../web/18.html')", sleepTime*18);
-  setTimeout("showpage('../web/19.html')", sleepTime*19);
-  setTimeout("showpage('../web/20.html')", sleepTime*20);
-   setTimeout("showpage('../web/21.html')", sleepTime*21);
-    setTimeout("showpage('../web/22.html')", sleepTime*22);
-	setTimeout("showpage('../web/24.html')", sleepTime*23);
-	   setTimeout("showpage('../web/25.html')", sleepTime*24);
-	    setTimeout("showpage('../web/26.html')", sleepTime*25);
-	 setTimeout("showpage('../web/27.html')", sleepTime*26);
-  mytimeout=setTimeout("../webplay()", sleepTime*27);
-}
+
+
 var dock = function (dock, sMin, sMax) { 
 	/* ---- private vars ---- */ 
 	var xm = xmb = ov = 0; 
@@ -240,15 +208,20 @@ window.onload = function() {
 	dock("dock", 48, 128); 
 }
 
-</script>
-<!--下面是登入(彈出視窗)-->
-<script type="text/javascript">
-function myFunction()
-{
-var url='login.php?'
-}
-</script>
 
+var i = 1;
+function webplay(){
+
+ document.getElementById("webframe").src = "../A001/show/pic ("+i+").jpg";
+ document.getElementById("wtf").innerHTML = i;
+
+i += 1; 
+ setTimeout("webplay()", 2000 );
+}
+
+
+
+</script>
 
 </head>
 
@@ -262,6 +235,7 @@ var url='login.php?'
 <li><a href="mylist.php">首頁</a></li>
 <li><a href="#"> 管理</a>
     	<ul>   	
+    	<li><a href="../creat_class.php">建立紀念簿</a></li>
         <li><a href="../create.php">上傳個人照片</a></li>
         </ul> 
     </li>  
@@ -307,17 +281,16 @@ var url='login.php?'
 <br>
 <br>
 <br>
-<center> 
-<iframe id="webframe"  width="700" height="600px" scrolling="no" frameborder="0">
-       
-       
-
- 
 
 
+<img src="smiley.gif" alt="Smiley face" height="70%" width="50%" id="webframe">       
+<p id="wtf">123</p>
 
-</iframe>
-</center> 
 <div id="musicArea"></div>
 </body> 
+
+
+
+
+
 </html>

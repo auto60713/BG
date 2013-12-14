@@ -238,7 +238,8 @@ var url='login.php?'
 
 <li><a href="mylist.php">首頁</a></li>
 <li><a href="#"> 管理</a>
-    	<ul>    	
+    	<ul>    	       
+    	<li><a href="../creat_class.php">建立紀念簿</a></li>
         <li><a href="../create.php">上傳個人照片</a></li>
         </ul> 
     </li>  
